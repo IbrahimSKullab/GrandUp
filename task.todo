@@ -1,0 +1,13 @@
+# Tasks
+- Add files upload to message
+- Add frontend design with laravel echo
+- Add chat model
+- Make sure that username and store is unique
+- Add Category API to seller API
+
+- Add seller number on view
+- Add GPS Location to show page on view
+
+- Add Category to API
+
+# Refactor

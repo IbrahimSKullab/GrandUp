@@ -1,0 +1,70 @@
+body,html {
+    font-family: 'abd-elRady-font', 'IBM Plex Sans', sans-serif;
+    font-size: 14.3px !important;
+}
+
+.daterangepicker .drp-calendar th.month,
+.daterangepicker .drp-calendar th,
+.daterangepicker .ranges li,
+.daterangepicker .drp-buttons .btn,
+.daterangepicker .drp-selected{
+    font-family: 'abd-elRady-font', 'IBM Plex Sans', sans-serif;
+}
+
+.card-header{
+    background: #576AD9 !important;
+}
+
+sup {
+    font-size: 18px;
+    color: #d63c64;
+}
+
+.invalid-feedback {
+    color: #d63c64;
+}
+
+table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td {
+    text-align: center;
+}
+
+html[lang='ar'] input[type="email"] {
+    direction: rtl;
+}
+
+.input-group.has-validation > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu), .input-group.has-validation > .dropdown-toggle:nth-last-child(n+4) {
+    border-top-left-radius: 0.625rem !important;
+    border-bottom-left-radius: 0.625rem !important;
+}
+
+html[lang='ar'] .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: -1px;
+    border-top-left-radius: 0.625rem !important;
+    border-bottom-left-radius: 0.625rem !important;
+}
+
+html[lang='ar'] input[type='number'] {
+    direction: rtl !important;
+}
+
+html[lang='ar'] .select2-container--bootstrap5 .select2-selection__clear {
+    right: auto;
+    left: 3rem;
+}
+
+html[lang='ar'] .select2-container--bootstrap5 .select2-dropdown .select2-results__option.select2-results__option--selected:after {
+    right: auto;
+    left: 3rem;
+}
+
+html[lang='ar'] .select2-container--bootstrap5 .select2-selection--multiple .select2-selection__rendered .select2-selection__choice .select2-selection__choice__remove {
+    top: 56%;
+    right: auto;
+    left: 4px;
+}
+
+.app-sidebar-menu .menu .menu-item .menu-link.active {
+    transition: color 0.2s ease, background-color 0.2s ease;
+    background-color: #1b1b28 !important;
+    color: #ffffff;
+}
