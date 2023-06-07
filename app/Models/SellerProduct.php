@@ -112,4 +112,8 @@ class SellerProduct extends Model implements HasMedia
     {
         return $query->whereNotNull('points');
     }
+    public function offerSellers()
+    {
+        return $this->belongsToMany(Seller::class, 'product_offers');
+    }
 }

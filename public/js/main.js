@@ -6,6 +6,8 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 });
 
 
+
+
 $('a[href="#"]').click(function ($) {
         $.preventDefault();
     });

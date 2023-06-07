@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\SellerCategory;
+use App\Models\SellerProduct;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,9 +32,14 @@ class HomeController extends Controller
     {
         return view('frontend.home.search');
     }
-    public function category()
+    public function category($id)
     {
-        return view('frontend.home.category');
+        $category = Category::find($id);
+        $products = $category->products;
+        $sellers = $category->sellers;
+        $subCategories = $category->subCategories;
+        $image = $category->image;
+        return view('frontend.home.category',['category'=>$category, 'products'=>$products, 'sellers'=>$sellers]);
     }
     public function offer()
     {

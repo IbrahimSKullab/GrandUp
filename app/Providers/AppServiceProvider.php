@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Exception;
 use App\Enums\GuardEnum;
+use App\Models\Category;
 use Illuminate\Support\Arr;
 use App\Models\GeneralSetting;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,8 @@ use Illuminate\Support\ServiceProvider;
 use Opcodes\LogViewer\Facades\LogViewer;
 use Illuminate\Database\Eloquent\Builder;
 use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
+use Illuminate\Support\Facades\View;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -63,5 +66,9 @@ class AppServiceProvider extends ServiceProvider
         LogViewer::auth(function ($request) {
             return Auth::guard(GuardEnum::ADMIN->value)->check();
         });
+
+        $cats = Category::where('status','1')->get();
+        View::share('cats', $cats);
+
     }
 }

@@ -139,71 +139,17 @@
                 <a class="item-link" href="{{route('offer')}}">العروض</a>
 
             </li>
+
+            @foreach ($cats as $category)
             <li class="list-item">
-
-                <a class="item-link" href="{{route('category')}}"> التلفزيونات</a>
-
+                <a class="item-link" href="{{route('category',$category->id)}}"> {{$category->title}}</a>
             </li>
-            <li class="list-item">
-
-                <a class="item-link" href="{{route('category')}}">الاجهزة الصوتية</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="{{route('category')}}">الاجهزة الكهربائية</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="{{route('category')}}">الكترونيات</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="{{route('category')}}">ملابس</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="{{route('category')}}">هواتف</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="{{route('category')}}">ساعات</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="{{route('category')}}">سماعات</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="category.html">ملابس</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="category.html">هواتف</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="category.html">ساعات</a>
-
-            </li>
-            <li class="list-item">
-
-                <a class="item-link" href="category.html">هواتف</a>
-
-            </li>
+            @endforeach
+           
+           
 
             <li class="list-item">
-
                 <a class="item-link" href="category.html">المزيد</a>
-
             </li>
 
 

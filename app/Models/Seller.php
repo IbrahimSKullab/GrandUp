@@ -88,17 +88,31 @@ class Seller extends Authenticatable implements HasMedia
 
     public function classifications()
     {
-        return $this->belongsToMany(Category::class, 'seller_classifications');
+        return $this->belongsToMany(Category::class, 'seller_categories');
     }
 
     public function products(): HasMany
     {
         return $this->hasMany(SellerProduct::class);
     }
+    public function categoryProducts($id): HasMany
+    {
+        return $this->hasMany(SellerProduct::class)->where('category_id',$id);
+    }
 
     public function newProducts(): HasMany
     {
-        return $this->hasMany(SellerProduct::class)->where('admin_approval', 1)->where('new_product', 1);
+        return $this->hasMany(SellerProduct::class)
+            ->where('admin_approval', 1)
+            ->where('new_product', 1);
+    } 
+    public function categoryNewProducts($id): HasMany
+    {
+        return $this->hasMany(SellerProduct::class)
+            ->where('admin_approval', 1)
+            ->where('new_product', 1)
+            ->where('category_id',$id)
+            ;
     }
 
     public function productPoints(): HasMany
@@ -107,6 +121,15 @@ class Seller extends Authenticatable implements HasMedia
             ->where('admin_approval', 1)
             ->whereNotNull('points')
             ->orderBy('points', 'desc');
+    }  
+    public function categoryProductPoints($id): HasMany
+    {
+        return $this->hasMany(SellerProduct::class)
+            ->where('admin_approval', 1)
+            ->whereNotNull('points')
+            ->orderBy('points', 'desc')
+            ->where('category_id',$id)
+            ;
     }
 
     public function otherProducts(): HasMany
@@ -115,6 +138,15 @@ class Seller extends Authenticatable implements HasMedia
             ->where('admin_approval', 1)
             ->where('new_product', 0)
             ->whereNull('points');
+    }
+    public function categoryOtherProducts($id): HasMany
+    {
+        return $this->hasMany(SellerProduct::class)
+            ->where('admin_approval', 1)
+            ->where('new_product', 0)
+            ->whereNull('points')
+            ->where('category_id',$id)
+            ;
     }
 
     public function subCategories(): HasMany
@@ -214,5 +246,9 @@ class Seller extends Authenticatable implements HasMedia
     public function blueTag()
     {
         return $this->hasMany(BlueTag::class, 'seller_id', 'id');
+    }
+    public function offerProducts()
+    {
+        return $this->belongsToMany(SellerProduct::class, 'product_offers');
     }
 }

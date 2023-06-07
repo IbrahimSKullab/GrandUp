@@ -15,7 +15,7 @@
             
                 <div class="category-banner" style="background-image: {{asset('img/pexels-daian-gan-102129.webp')}}">
                 
-                    <p class="banner-text">الملابس</p>
+                    <p class="banner-text">{{$category->title}}</p>
                 
                 </div>
                 <div class="stores-area top-stores-area">
@@ -30,238 +30,24 @@
 
                         <div class="row target-row row-cols-lg-6 row-cols-md-5 justify-content-md-center gx-3">
 
+                            @foreach($sellers as $index=>$seller)
                             <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
+                                
+                                <a href="{{route('store',$seller->id)}}" class="store-item">
 
                                     <div class="store-img">
-
                                         <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
                                     </div>
                                     <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
+                                        <span class="store-name">{{$seller->name}}</span>
                                     </div>
-
                                 </a>
 
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-
+                            </div>  
+                            @if(($index+1)% 6 == 0)
                             <div class="divider d-none d-md-block col-12"></div>
-
-
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
-                            <div class="store-wrap">
-
-                                <a href="{{route('store')}}" class="store-item">
-
-                                    <div class="store-img">
-
-                                        <img class="img-fluid" src="{{asset('img/store.svg')}}" alt="storeName">
-
-                                    </div>
-                                    <div class="store-texts">
-
-                                        <span class="store-name">اسم المتجر</span>
-
-
-                                    </div>
-
-                                </a>
-
-                            </div>
+                            @endif
+                        @endforeach
 
 
                         </div>

@@ -1,6 +1,6 @@
 <?php
 
-
+use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Seller;
 use App\Models\Permission;
@@ -36,13 +36,37 @@ Route::get('/dashboard', function () {
 
 Auth::routes();
 
+/* Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/test',function(){
+        dd(123);
+    });
+});
+Route::middleware(['auth:seller'])->group(function () {
+    Route::get('/test1',function(){
+        dd(123);
+    });
+});
+Route::middleware(['auth:shipping_company'])->group(function () {
+    Route::get('/test2',function(){
+
+    });
+}); */
+
+
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/search', [HomeController::class, 'search'])->name('search');
-Route::get('/categoty', [HomeController::class, 'category'])->name('category');
 Route::get('/offer', [HomeController::class, 'offer'])->name('offer');
 
-Route::get('/store', [StoreController::class, 'storePage'])->name('store');
+
+Route::get('/product', [ProductController::class, 'index']);
+Route::post('/addfriend', function(Request $request){
+    dd('123');
+})->name('addfriend');
+Route::get('/product/create', [ProductController::class, 'create']);
+
+Route::get('/store/{id?}', [StoreController::class, 'storePage'])->name('store');
 Route::get('/allstores', [StoreController::class, 'index'])->name('allstores');
+Route::get('/categoty/{id?}', [HomeController::class, 'category'])->name('category');
